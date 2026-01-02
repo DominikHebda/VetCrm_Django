@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73656b81-46fd-4ef3-a8d9-3cdf3d9885f0" name="Changes" comment="Create a new project.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="73656b81-46fd-4ef3-a8d9-3cdf3d9885f0" name="Changes" comment="Add Django dependency" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,11 +54,20 @@
       <option name="project" value="LOCAL" />
       <updated>1767368416283</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Django dependency">
+      <option name="closed" value="true" />
+      <created>1767378909285</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767378909285</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create a new project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a new project." />
+    <MESSAGE value="Add Django dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Django dependency" />
   </component>
 </project>
