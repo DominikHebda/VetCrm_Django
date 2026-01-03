@@ -20,11 +20,34 @@ class Pet(models.Model):
     def __str__(self):
         return f"{self.name} ({self.species}) {self.breed} ({self.birth_date})"
 
+class Doctor(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    specialization = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+    email = models.EmailField(blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Lekarz"
+        verbose_name_plural = "Lekarze"
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 
 class Appointment(models.Model):
     pet = models.ForeignKey(
         Pet,
         on_delete=models.CASCADE,
+        related_name='appointments'
+    )
+    doctor = models.ForeignKey(
+        Doctor,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
         related_name='appointments'
     )
     date = models.DateTimeField()
