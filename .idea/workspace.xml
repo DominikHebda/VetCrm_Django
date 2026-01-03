@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73656b81-46fd-4ef3-a8d9-3cdf3d9885f0" name="Changes" comment="Add core app to installed apps">
+    <list default="true" id="73656b81-46fd-4ef3-a8d9-3cdf3d9885f0" name="Changes" comment="Add Pets model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767381182295</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add Pets model">
+      <option name="closed" value="true" />
+      <created>1767435156591</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767435156591</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -103,6 +113,7 @@
     <MESSAGE value="Add Django dependency" />
     <MESSAGE value="Initial Django projest setup" />
     <MESSAGE value="Add core app to installed apps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add core app to installed apps" />
+    <MESSAGE value="Add Pets model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Pets model" />
   </component>
 </project>
