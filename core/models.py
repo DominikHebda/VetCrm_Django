@@ -38,6 +38,11 @@ class Doctor(models.Model):
 
 
 class Appointment(models.Model):
+    class Status(models.TextChoices):
+        PLANNED = 'planned', 'Zaplanowana'
+        COMPLETED = 'completed', 'Zakończona'
+        CANCELLED = 'cancelled', 'Anulowana'
+
     pet = models.ForeignKey(
         Pet,
         on_delete=models.CASCADE,
@@ -53,6 +58,12 @@ class Appointment(models.Model):
     date = models.DateTimeField()
     reason = models.CharField(max_length=255)
     notes = models.TextField(blank=True)
+
+    status = models.CharField(
+        max_length=20,
+        choices=Status.choices,
+        default=Status.PLANNED,
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
 
