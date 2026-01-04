@@ -1,24 +1,77 @@
 from django.db import models
 
 # Create your models here.
-class Pet(models.Model):
-    name = models.CharField(max_length=100)
-    species = models.CharField(max_length=100)
-    breed = models.CharField(max_length=100, blank=True, null=True)
-    birth_date = models.DateField(blank=True, null=True)
+class Client(models.Model):
+    first_name = models.CharField("Imię", max_length=100)
+    last_name = models.CharField("Nazwisko", max_length=100)
 
-    owner_name = models.CharField(max_length=100)
-    owner_email = models.EmailField(blank=True, null=True)
-    owner_phone = models.CharField(max_length=20)
+    phone = models.CharField(
+        "Telefon",
+        max_length=20,
+        help_text="Numer kontaktowy"
+    )
+    email = models.EmailField(
+        "Email",
+        blank=True
+    )
+
+    address = models.TextField(
+        "Adres",
+        blank=True
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "Zwierzę"
-        verbose_name_plural = "Zwierzęta"
+        verbose_name = "Klient"
+        verbose_name_plural = "Klienci"
+        ordering = ["last_name", "first_name"]
 
     def __str__(self):
-        return f"{self.name} ({self.species}) {self.breed} ({self.birth_date})"
+        return f"{self.first_name} {self.last_name}"
+
+
+class Pet(models.Model):
+    name = models.CharField("Imię", max_length=100)
+
+    species = models.CharField(
+        "Gatunek",
+        max_length=100,
+        help_text="np. pies, kot"
+    )
+    breed = models.CharField(
+        "Rasa",
+        max_length=100,
+        blank=True
+    )
+    birth_date = models.DateField(
+        "Data urodzenia",
+        blank=True,
+        null=True
+    )
+
+    owner = models.ForeignKey(
+        Client,
+        on_delete=models.CASCADE,
+        related_name="pets",
+        verbose_name="Właściciel",
+        null=True
+    )
+
+    created_at = models.DateTimeField(
+        "Data utworzenia",
+        auto_now_add=True
+    )
+
+    class Meta:
+        verbose_name = "Zwierzę"
+        verbose_name_plural = "Zwierzęta"
+        ordering = ["name"]
+
+    def __str__(self):
+        breed = f", {self.breed}" if self.breed else ""
+        return f"{self.name} ({self.species}{breed})"
+
 
 class Doctor(models.Model):
     first_name = models.CharField(max_length=100)

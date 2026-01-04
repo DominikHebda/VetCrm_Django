@@ -4,8 +4,13 @@ from .models import Pet, Appointment, Doctor
 # Register your models here.
 @admin.register(Pet)
 class PetAdmin(admin.ModelAdmin):
-    list_display = ('name', 'species', 'owner_name', 'owner_phone')
+    list_display = ('name', 'species', 'name', 'owner_phone')
     search_fields = ('name', 'owner_name')
+
+    def owner_phone(self, obj):
+        return obj.owner_phone if obj.owner else '-'
+
+    owner_phone.short_description = 'Telefon właściciela'
 
 
 @admin.register(Appointment)
