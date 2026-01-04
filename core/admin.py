@@ -10,9 +10,9 @@ class PetAdmin(admin.ModelAdmin):
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('pet', 'date', 'reason')
-    list_filter = ('date',)
-    search_fields = ('pet', 'reason')
+    list_display = ('pet','doctor', 'date','status', 'reason')
+    list_filter = ('status', 'doctor', 'date',)
+    search_fields = ('pet', 'first_name', 'reason')
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
