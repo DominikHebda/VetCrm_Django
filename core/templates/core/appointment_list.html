@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista wizyt</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .status-planned {
-            color: orange;
-            font-weight: bold;
-        }
-        .status-completed {
-            color: green;
-            font-weight: bold;
-        }
-        .status-cancelled {
-            color: red;
-            font-weight: bold;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Lista wizyt</h1>
+{% block title %}Lista wizyt{% endblock %}
+
+{% block content %}
+<h2>Lista wizyt</h2>
 
 <table>
     <thead>
@@ -50,13 +22,7 @@
             <td>{{ appointment.date|date:"Y-m-d H:i" }}</td>
             <td>{{ appointment.pet.name }}</td>
             <td>{{ appointment.pet.owner_name }}</td>
-            <td>
-                {% if appointment.doctor %}
-                    {{ appointment.doctor }}
-                {% else %}
-                    —
-                {% endif %}
-            </td>
+            <td>{{ appointment.doctor|default:"—" }}</td>
             <td class="status-{{ appointment.status }}">
                 {{ appointment.get_status_display }}
             </td>
@@ -69,6 +35,4 @@
         {% endfor %}
     </tbody>
 </table>
-
-</body>
-</html>
+{% endblock %}
